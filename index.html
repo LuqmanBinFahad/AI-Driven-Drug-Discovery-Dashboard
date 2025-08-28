@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI in Drug Discovery Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .section-header {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s ease-in-out, padding 0.7s ease-in-out;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        .section-content.active {
+            max-height: 2000px; /* Increased for detailed content */
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+        .stat-card {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        .bg-custom-green { background-color: #4CAF50; }
+        .bg-custom-blue { background-color: #2196F3; }
+        .bg-custom-red { background-color: #F44336; }
+        .bg-custom-yellow { background-color: #FFC107; }
+        .font-code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body class="p-6">
+    <div class="max-w-7xl mx-auto space-y-8">
+        <!-- Main Dashboard Title -->
+        <header class="text-center">
+            <h1 class="text-4xl font-bold text-gray-900">AI-Driven Drug Discovery Dashboard 🧠💊</h1>
+            <p class="mt-1 text-xl text-gray-700"><a href="https://www.linkedin.com/in/luqman-bin-fahad-a3220a366/" target="_blank" class="text-indigo-600 hover:text-indigo-800">Dr. Luqman Bin Fahad</a></p>
+            <p class="mt-2 text-lg text-gray-600">Bridging your PharmD knowledge with the AI revolution in R&D.</p>
+        </header>
+
+        <!-- Key Stats Section -->
+        <div class="grid md:grid-cols-4 gap-6 text-white text-center">
+            <div class="stat-card p-6 bg-custom-green">
+                <h3 class="text-xl font-bold">Traditional Cost</h3>
+                <p class="text-3xl font-extrabold mt-2">$2.6 Billion</p>
+                <p class="mt-1">per drug</p>
+            </div>
+            <div class="stat-card p-6 bg-custom-blue">
+                <h3 class="text-xl font-bold">AI Time Reduction</h3>
+                <p class="text-3xl font-extrabold mt-2">12-18 months</p>
+                <p class="mt-1">vs. 10-12 years</p>
+            </div>
+            <div class="stat-card p-6 bg-custom-red">
+                <h3 class="text-xl font-bold">Traditional Failure Rate</h3>
+                <p class="text-3xl font-extrabold mt-2">~90%</p>
+                <p class="mt-1">in clinical trials</p>
+            </div>
+            <div class="stat-card p-6 bg-custom-yellow">
+                <h3 class="text-xl font-bold">AI Success Improvement</h3>
+                <p class="text-3xl font-extrabold mt-2">Reduced to ~80%</p>
+                <p class="mt-1">failure rate</p>
+            </div>
+        </div>
+
+        <!-- Dynamic Content Sections -->
+        <div class="space-y-4">
+            <!-- Phase 1: Target Discovery & Validation -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="section-header flex items-center justify-between p-6 bg-gray-100 hover:bg-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-800">1. Target Discovery & Validation</h2>
+                    <svg class="w-6 h-6 text-gray-500 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </div>
+                <div class="section-content">
+                    <div class="text-gray-700 space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold border-b-2 border-gray-200 pb-2">Traditional Approach</h3>
+                            <p class="mt-2">This is the critical starting point where we identify and confirm a biological molecule that a drug can act on. You're familiar with the idea of a "good drug target" from your coursework: it must have a proven disease-modifying function and be "druggable" (able to be modulated by a small molecule or biologic). The high failure rate in Phase II clinical trials (~48%) is often due to poor target validation. Methods like genetic studies (GWAS), functional genomics (CRISPR), and pharmacological assays are used to validate that the target is causally linked to the disease.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold border-b-2 border-gray-200 pb-2">AI Revolution</h3>
+                            <p class="mt-2">AI dramatically speeds up and enhances this process by helping us find and characterize targets faster than ever. Think of it as augmenting the research you already know.</p>
+                            <ul class="list-disc list-inside space-y-2 mt-2">
+                                <li><strong>Multi-Omics Integration:</strong> Instead of looking at a single type of data (like genomics), AI tools such as <span class="font-code text-indigo-700">PandaOmics</span> integrate multi-omics data (genomics, transcriptomics, proteomics) to build a holistic picture of a disease. This helps uncover complex pathways and identify novel targets with higher confidence.</li>
+                                <li><strong>Protein Structure Prediction:</strong> AI models like <span class="font-code text-indigo-700">AlphaFold</span> have revolutionized structural biology. By accurately predicting a protein's 3D structure from its amino acid sequence, they help us visualize and identify new binding sites, even on "undruggable" targets. This is crucial for structure-based drug design.</li>
+                                <li><strong>Binding Site Prediction:</strong> Building on structural predictions, AI tools like <span class="font-code text-indigo-700">DeepSite</span> and <span class="font-code text-indigo-700">P2Rank</span> use deep learning and machine learning to predict where a small molecule might bind on a protein, improving our ability to find novel therapeutic sites.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2: Hit Identification & Lead Optimization -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="section-header flex items-center justify-between p-6 bg-gray-100 hover:bg-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-800">2. Hit Identification & Lead Optimization</h2>
+                    <svg class="w-6 h-6 text-gray-500 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </div>
+                <div class="section-content">
+                    <div class="text-gray-700 space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold border-b-2 border-gray-200 pb-2">Traditional Approach</h3>
+                            <p class="mt-2">This is where your chemistry and pharmacology knowledge truly shines. We use a mix of experimental `High-Throughput Screening (HTS)` and computational methods to find and refine molecules. You might have studied `QSAR` models (like the Hansch equation) and molecular docking, but traditional approaches often oversimplify complex biological interactions like protein flexibility. The iterative process of medicinal chemistry is slow and challenging, as you balance potency, selectivity, and drug-likeness. (1.3, 5.1)</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold border-b-2 border-gray-200 pb-2">AI Revolution</h3>
+                            <p class="mt-2">AI takes these computational methods and supercharges them, turning what was once a bottleneck into a major accelerator.</p>
+                            <ul class="list-disc list-inside space-y-2 mt-2">
+                                <li><strong>AI-Powered Virtual Screening:</strong> Instead of physically screening millions of compounds, AI tools perform <span class="font-semibold">virtual screening</span>. `DeepDock` and `PyRMD` use deep learning to predict a molecule's binding affinity and activity with high accuracy, filtering out inactive compounds in hours. `PyRMD` even uses a specialized algorithm to identify new ligands based on chemical similarity, outperforming traditional methods.</li>
+                                <li><strong>Enhanced Molecular Docking:</strong> Traditional docking has limitations, especially with flexible proteins. AI-based scoring functions like `GNINA` use convolutional neural networks (CNNs) to analyze the 3D space of the binding pocket and improve pose prediction and binding affinity scores. This means more reliable predictions of how a drug binds to its target.</li>
+                                <li><strong>Generative Molecule Design:</strong> AI models like `REINVENT` and `DiffDock` don't just screen existing molecules; they generate entirely new ones from scratch. This <span class="font-semibold">de novo drug design</span> leverages reinforcement learning to create molecules optimized for multiple properties (potency, solubility, safety) simultaneously, a process that is nearly impossible for a human to do manually.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Phase 3: Preclinical Studies (ADMET) -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="section-header flex items-center justify-between p-6 bg-gray-100 hover:bg-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-800">3. Preclinical Studies (ADMET)</h2>
+                    <svg class="w-6 h-6 text-gray-500 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </div>
+                <div class="section-content">
+                    <div class="text-gray-700 space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold border-b-2 border-gray-200 pb-2">Traditional Approach</h3>
+                            <p class="mt-2">Your understanding of pharmacokinetics and toxicology is the foundation here. This phase focuses on a drug's `ADMET` properties: Absorption, Distribution, Metabolism, Excretion, and Toxicity. You know that drugs often fail because of poor bioavailability or unexpected toxicity, as seen in the Thalidomide tragedy. (1.5) Traditional methods rely on expensive and time-consuming in vivo animal models and in vitro assays to predict these outcomes.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold border-b-2 border-gray-200 pb-2">AI Revolution</h3>
+                            <p class="mt-2">AI-driven predictive modeling drastically reduces the cost and time of this phase by flagging potential failures early.</p>
+                            <ul class="list-disc list-inside space-y-2 mt-2">
+                                <li><strong>AI-Driven QSAR:</strong> This is an evolution of a concept you've learned. AI-driven `QSAR` models use machine learning (like Random Forest) and deep learning (like Graph Neural Networks) to automatically learn complex relationships between a molecule's structure and its ADMET properties. Tools like `ADMETlab` and `pkCSM` can predict solubility, permeability, and liver toxicity from a simple chemical structure.</li>
+                                <li><strong>Molecular Dynamics (MD) Simulation:</strong> MD simulates the "jiggling and wiggling" of atoms in a biological system over time. AI is now accelerating these simulations by improving the underlying force fields and sampling techniques, allowing us to accurately predict things like protein-ligand stability and membrane permeability without extensive lab work.</li>
+                            </ul>
+                            <p>For context, libraries like <span class="font-code text-indigo-700">RDKit</span> and <span class="font-code text-indigo-700">scikit-learn</span> in Python are the tools that medicinal chemists and data scientists use to build these predictive models. (3.5)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 4: Clinical Trials & Post-Market Surveillance -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="section-header flex items-center justify-between p-6 bg-gray-100 hover:bg-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-800">4. Clinical Trials & Post-Market Surveillance</h2>
+                    <svg class="w-6 h-6 text-gray-500 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </div>
+                <div class="section-content">
+                    <div class="text-gray-700 space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold border-b-2 border-gray-200 pb-2">Traditional Approach</h3>
+                            <p class="mt-2">This is the most time-consuming and expensive phase of drug development. The goal is to prove a drug's safety and efficacy in humans through a multi-phase trial process. Post-market surveillance is then a mandatory, continuous process to monitor long-term safety and identify rare side effects, often through passive reporting systems.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold border-b-2 border-gray-200 pb-2">AI Revolution</h3>
+                            <p class="mt-2">AI can improve patient outcomes and drug safety by making trials smarter and surveillance more proactive.</p>
+                            <ul class="list-disc list-inside space-y-2 mt-2">
+                                <li><strong>Clinical Trial Optimization:</strong> AI helps design smarter trials by identifying optimal patient populations, selecting sites, and predicting enrollment rates and dropout risks. Tools like <span class="font-code text-indigo-700">Deep6 AI</span> use natural language processing (NLP) to read unstructured medical records and match patients to complex trial criteria in minutes.</li>
+                                <li><strong>Pharmacovigilance:</strong> AI-powered pharmacovigilance tools can continuously monitor real-world data from social media, forums, and electronic health records for adverse events. This allows pharmaceutical companies and regulatory bodies to detect new safety signals and react much faster than traditional methods, protecting patient safety.</li>
+                                <li><strong>Drug Repurposing:</strong> AI can analyze existing drugs and predict new therapeutic indications, a process known as drug repurposing. This allows companies to find new uses for approved drugs, extending their lifecycle and addressing unmet medical needs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const headers = document.querySelectorAll('.section-header');
+            headers.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('svg');
+                    
+                    const isActive = content.classList.contains('active');
+                    
+                    // Close all other sections
+                    document.querySelectorAll('.section-content.active').forEach(item => {
+                        if (item !== content) {
+                            item.classList.remove('active');
+                            item.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
+                        }
+                    });
+                    
+                    // Toggle the clicked section
+                    if (isActive) {
+                        content.classList.remove('active');
+                        icon.classList.remove('rotate-180');
+                    } else {
+                        content.classList.add('active');
+                        icon.classList.add('rotate-180');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
