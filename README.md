@@ -25,7 +25,7 @@ This interactive dashboard provides a comprehensive overview of how Artificial I
 
 ## How to Use
 
-To view the dashboard, simply open the `[AI-Driven Drug Discovery Dashboard.html](https://luqmanbinfahad.github.io/AI-Driven-Drug-Discovery-Dashboard/)` file in any modern web browser. The content sections are interactive; click on the headers to expand or collapse them.
+To view the dashboard, simply open the [AI-Driven Drug Discovery Dashboard.html](https://luqmanbinfahad.github.io/AI-Driven-Drug-Discovery-Dashboard/) file in any modern web browser. The content sections are interactive; click on the headers to expand or collapse them.
 
 ## Author
 
